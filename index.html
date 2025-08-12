@@ -1,15 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parking Game</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Parking Game with Pixel Cars</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>🚗 Parking Game</h1>
+  <h1>Parking Game - 10 Levels with Coins, Shop & Rebirth</h1>
+
+  <div id="gameContainer" style="position: relative; width: 600px; margin: 0 auto;">
     <canvas id="gameCanvas" width="600" height="400"></canvas>
-    <p class="instructions">Use arrow keys to move and park the car in the green box!</p>
-    <script src="script.js"></script>
+    <button id="restartBtn" style="display:none; position: absolute;">Restart</button>
+  </div>
+
+  <p class="instructions">
+    Use arrow keys to move the orange pixel car.<br />
+    Park in the green spot surrounded by 3 cars.<br />
+    Each level gets harder with more obstacles!<br />
+    Park perfectly to advance.<br />
+    If you crash, press <strong>R</strong> to restart.<br />
+    Coins: <span id="coinCounter">0</span> | Wins: <span id="winCounter">0</span>
+  </p>
+
+  <button id="shopBtn">Open Shop</button>
+  <button id="rebirthBtn">Rebirth (Cost: 10 Wins + 20 Coins)</button>
+
+  <!-- Shop Modal -->
+  <div id="shopModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span id="closeShop" class="close">&times;</span>
+      <h2>Shop</h2>
+      <p>Coins: <span id="shopCoins">0</span></p>
+      <div id="shopItems">
+        <!-- Items inserted by JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
